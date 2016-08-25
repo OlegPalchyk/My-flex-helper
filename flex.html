@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex-box helper</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+<body>
+<div class="header">
+    <h1>Flex-box helper</h1>
+</div>
+<section>
+    <article>
+        <div class="buttons">
+            <span id="add_item" class="manipulation_button">Add</span>
+            <span id="dismiss_item" class="manipulation_button">Remove</span>
+        </div>
+        <div class="flex_main_line flex-wrap" id="flex-block">
+            <div class="flex-item">Start</div>
+            <div class="flex-item" id="test-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+            <div class="flex-item">Item 4</div>
+            <div class="flex-item" id="lastItem">End</div>
+        </div>
+
+    </article>
+</section>
+<section>
+    <article class="menu-items">
+        <header><span>Flex-direction</span></header>
+
+        <ul>
+            <li>
+                <input type="radio" id="row" name="selector" checked onchange="changeFlexWrap('flex-direction', 'row')">
+                <label for="row">Row</label>
+
+                <div class="check"></div>
+            </li>
+
+            <li>
+                <input type="radio" id="column" name="selector" onchange="changeFlexWrap('flex-direction','column')">
+                <label for="column">Column</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+
+            <li>
+                <input type="radio" id="row-reverse" name="selector"
+                       onchange="changeFlexWrap('flex-direction','row-reverse')">
+                <label for="row-reverse">Row reverse</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+            <li>
+                <input type="radio" id="column-reverse" name="selector"
+                       onchange="changeFlexWrap('flex-direction','column-reverse')">
+                <label for="column-reverse">Column Reverse</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+        </ul>
+    </article>
+    <article class="menu-items">
+        <header><span>Justify-content</span></header>
+        <ul>
+            <li>
+                <input type="radio" id="flex-start" name="selector2" checked
+                       onchange="changeFlexWrap('justify-content','flex-start')">
+                <label for="flex-start">flex-start</label>
+
+                <div class="check"></div>
+            </li>
+
+            <li>
+                <input type="radio" id="flex-end" name="selector2"
+                       onchange="changeFlexWrap('justify-content','flex-end')">
+                <label for="flex-end">flex-end</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+
+            <li>
+                <input type="radio" id="center" name="selector2" onchange="changeFlexWrap('justify-content','center')">
+                <label for="center">center</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+
+            <li>
+                <input type="radio" id="space-between" name="selector2"
+                       onchange="changeFlexWrap('justify-content','space-between')">
+                <label for="space-between">space-between</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+
+            <li>
+                <input type="radio" id="space-around" name="selector2"
+                       onchange="changeFlexWrap('justify-content','space-around')">
+                <label for="space-around">space-around</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+        </ul>
+    </article>
+    <article class="menu-items">
+        <header><span>Align-items</span></header>
+        <ul>
+            <li>
+                <input type="radio" id="flex-start1" name="selector3" checked
+                       onchange="changeFlexWrap('align-items','flex-start')">
+                <label for="flex-start1">flex-start</label>
+
+                <div class="check"></div>
+            </li>
+
+            <li>
+                <input type="radio" id="flex-end1" name="selector3" onchange="changeFlexWrap('align-items','flex-end')">
+                <label for="flex-end1">flex-end</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+
+            <li>
+                <input type="radio" id="center1" name="selector3" onchange="changeFlexWrap('align-items','center')">
+                <label for="center1">center</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+
+            <li>
+                <input type="radio" id="baseline" name="selector3" onchange="changeFlexWrap('align-items','baseline')">
+                <label for="baseline">baseline</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+
+            <li>
+                <input type="radio" id="stretch" name="selector3" onchange="changeFlexWrap('align-items','stretch')">
+                <label for="stretch">stretch</label>
+
+                <div class="check">
+                    <div class="inside"></div>
+                </div>
+            </li>
+        </ul>
+    </article>
+    <article class="menu-items">
+        <header><span>For 1 flex-block-item</span></header>
+        <ul>
+            <li>
+
+                <input type="checkbox" class="checkbox" id="flex-basis" onchange="toggleChangeFlexItem('flex-basis')"/>
+                <label for="flex-basis">flex-basis(Ex. 150px)</label>
+            </li>
+
+            <li>
+
+                <input type="checkbox" class="checkbox" id="flex-grow" onchange="toggleChangeFlexItem('flex-grow')"/>
+                <label for="flex-grow">flex-grow(Ex.3 to 1)</label>
+            </li>
+
+            <li>
+
+                <input type="checkbox" class="checkbox" id="align-self" onchange="toggleChangeFlexItem('align-self')"/>
+                <label for="align-self">align-self(Ex.flex-end)</label>
+            </li>
+            <li>
+
+                <input type="checkbox" class="checkbox" id="flex-order" onchange="toggleChangeFlexItem('flex-order')"/>
+                <label for="flex-order">flex-order(Ex. Item 1 will be before End)</label>
+            </li>
+
+        </ul>
+    </article>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>
